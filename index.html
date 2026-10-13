@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Guess My Number: Vault Heist!</title>
+  </head>
+  <body>
+    <!-- MAIN MENU -->
+    <section class="screen" id="screen-menu">
+      <h1 class="menu-title">Guess My Number!</h1>
+      <p class="menu-sub">🔐 VAULT HEIST 🔐</p>
+      <p class="menu-tag">Crack 4 vaults. Beware: the code can move!</p>
+      <div class="menu-buttons">
+        <button class="btn" id="btn-start">Start Heist</button>
+        <button class="btn" id="btn-how">How to Play</button>
+      </div>
+      <p class="menu-high">
+        🥇 Highscore: <span class="menu-highscore"></span>
+      </p>
+    </section>
+
+    <!-- INSTRUCTIONS -->
+    <section class="screen hidden" id="screen-how">
+      <h2>How to Play</h2>
+      <ul class="how-list">
+        <li>Each vault hides a secret number. Type a guess and press Check!</li>
+        <li>You get limited tries and a countdown for every vault.</li>
+        <li>🔥 Hints tell you how hot or cold your guess is.</li>
+        <li>
+          🌀 TWIST: in later vaults the code SHIFTS after every few wrong
+          guesses!
+        </li>
+        <li>📡 Radar (once per vault) reveals if the code is odd or even.</li>
+        <li>👻 In the last vault there are no higher/lower hints!</li>
+        <li>Faster wins with more tries left earn more points.</li>
+      </ul>
+      <button class="btn" id="btn-back">Back</button>
+    </section>
+
+    <!-- GAME -->
+    <div class="screen hidden" id="screen-game">
+      <header>
+        <h1>Guess My Number!</h1>
+        <p class="between">(Between <span class="range-text"></span>)</p>
+        <button class="btn again">Menu</button>
+        <div class="number">?</div>
+      </header>
+      <main>
+        <section class="left">
+          <input type="number" class="guess" />
+          <div class="left-buttons">
+            <button class="btn check">Check!</button>
+            <button class="btn radar">📡 Radar</button>
+          </div>
+          <p class="history-label">Guesses:</p>
+          <p class="history">-</p>
+        </section>
+        <section class="right">
+          <p class="message">Start guessing...</p>
+          <p class="label-level">🔐 <span class="level-name"></span></p>
+          <p class="label-tries">🎯 Tries: <span class="tries"></span></p>
+          <p class="label-timer">⏱️ Time: <span class="timer"></span>s</p>
+          <div class="timer-bar"><div class="timer-fill"></div></div>
+          <p class="label-score">💯 Score: <span class="score"></span></p>
+          <p class="label-highscore">
+            🥇 Highscore: <span class="highscore"></span>
+          </p>
+        </section>
+      </main>
+    </div>
+
+    <!-- RESULTS -->
+    <section class="screen hidden" id="screen-results">
+      <h2 class="results-title">Game Over</h2>
+      <p class="results-summary"></p>
+      <table class="results-table">
+        <thead>
+          <tr>
+            <th>Vault</th>
+            <th>Result</th>
+            <th>Points</th>
+          </tr>
+        </thead>
+        <tbody class="results-body"></tbody>
+      </table>
+      <p class="results-score">💯 Total: <span class="results-total"></span></p>
+      <div class="menu-buttons">
+        <button class="btn" id="btn-again">Play Again</button>
+        <button class="btn" id="btn-menu">Main Menu</button>
+      </div>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>
